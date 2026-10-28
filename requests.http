@@ -1,0 +1,72 @@
+### IntelliJ HTTP Client - rode a aplicacao e clique no triangulo verde de cada requisicao
+
+### 1) POST - cria uma receita (201 Created)
+POST http://localhost:8080/transacoes
+Content-Type: application/json
+
+{
+  "descricao": "Salario",
+  "valor": 3500.00,
+  "tipo": "RECEITA",
+  "categoria": "Trabalho"
+}
+
+### 2) POST - cria uma despesa acima do limite (gera ALERTA DE GASTO no log)
+POST http://localhost:8080/transacoes
+Content-Type: application/json
+
+{
+  "descricao": "Aluguel",
+  "valor": 1200.00,
+  "tipo": "DESPESA",
+  "categoria": "Moradia"
+}
+
+### 3) GET - lista tudo (200 OK)
+GET http://localhost:8080/transacoes
+
+### 4) GET por id existente (200 OK)
+GET http://localhost:8080/transacoes/1
+
+### 5) GET por id inexistente (404 Not Found + ERRO no log)
+GET http://localhost:8080/transacoes/999
+
+### 6) PUT - atualiza (200 OK)
+PUT http://localhost:8080/transacoes/2
+Content-Type: application/json
+
+{
+  "descricao": "Aluguel (reajustado)",
+  "valor": 1300.00,
+  "tipo": "DESPESA",
+  "categoria": "Moradia"
+}
+
+### 7) PUT inexistente (404)
+PUT http://localhost:8080/transacoes/999
+Content-Type: application/json
+
+{
+  "descricao": "Teste",
+  "valor": 10.00,
+  "tipo": "DESPESA"
+}
+
+### 8) DELETE (204 No Content)
+DELETE http://localhost:8080/transacoes/2
+
+### 9) DELETE inexistente (404)
+DELETE http://localhost:8080/transacoes/999
+
+### 10) Resumo (receitas, despesas, saldo, alertaGasto)
+GET http://localhost:8080/transacoes/resumo
+
+### 11) Validacao (400 Bad Request + ERRO no log)
+POST http://localhost:8080/transacoes
+Content-Type: application/json
+
+{
+  "descricao": "",
+  "valor": -5,
+  "tipo": "DESPESA"
+}

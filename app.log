@@ -1,0 +1,44 @@
+2026-10-28 01:19:20.687 [INFO] [main] ControleFinanceiroApplication - Iniciando Sistema de Controle Financeiro
+2026-10-28 01:19:20.691 [DEBUG] [main] TransacaoController - POST /transacoes recebido
+2026-10-28 01:19:20.692 [DEBUG] [main] TransacaoService - Criando transacao: tipo=RECEITA, categoria=Trabalho, valor=3500.00
+2026-10-28 01:19:20.692 [INFO] [main] TransacaoService - Transacao criada com sucesso: id=1
+2026-10-28 01:19:20.692 [INFO] [main] TransacaoController - POST /transacoes -> 201 Created (id=1)
+2026-10-28 01:19:20.692 [DEBUG] [main] TransacaoController - POST /transacoes recebido
+2026-10-28 01:19:20.692 [DEBUG] [main] TransacaoService - Criando transacao: tipo=DESPESA, categoria=Moradia, valor=1200.00
+2026-10-28 01:19:20.693 [INFO] [main] TransacaoService - ALERTA DE GASTO: despesa id=2 (1200.00) acima do limite de 500.00
+2026-10-28 01:19:20.693 [INFO] [main] TransacaoService - Transacao criada com sucesso: id=2
+2026-10-28 01:19:20.693 [INFO] [main] TransacaoController - POST /transacoes -> 201 Created (id=2)
+2026-10-28 01:19:20.693 [DEBUG] [main] TransacaoController - GET /transacoes recebido
+2026-10-28 01:19:20.693 [DEBUG] [main] TransacaoService - Listando todas as transacoes
+2026-10-28 01:19:20.693 [INFO] [main] TransacaoService - Listagem concluida: 2 transacao(oes)
+2026-10-28 01:19:20.693 [INFO] [main] TransacaoController - GET /transacoes -> 200 OK (2 itens)
+2026-10-28 01:19:20.693 [DEBUG] [main] TransacaoController - GET /transacoes/1 recebido
+2026-10-28 01:19:20.693 [DEBUG] [main] TransacaoService - Buscando transacao por id=1
+2026-10-28 01:19:20.694 [INFO] [main] TransacaoService - Transacao encontrada: id=1
+2026-10-28 01:19:20.694 [INFO] [main] TransacaoController - GET /transacoes/1 -> 200 OK
+2026-10-28 01:19:20.694 [DEBUG] [main] TransacaoController - GET /transacoes/999 recebido
+2026-10-28 01:19:20.694 [DEBUG] [main] TransacaoService - Buscando transacao por id=999
+2026-10-28 01:19:20.694 [ERRO] [main] TransacaoService - Transacao nao encontrada: id=999
+2026-10-28 01:19:20.694 [ERRO] [main] TransacaoController - GET /transacoes/999 -> 404 Not Found
+2026-10-28 01:19:20.694 [DEBUG] [main] TransacaoController - PUT /transacoes/2 recebido
+2026-10-28 01:19:20.695 [DEBUG] [main] TransacaoService - Atualizando transacao id=2 com tipo=DESPESA, valor=1300.00
+2026-10-28 01:19:20.695 [INFO] [main] TransacaoService - ALERTA DE GASTO: despesa id=2 (1300.00) acima do limite de 500.00
+2026-10-28 01:19:20.695 [INFO] [main] TransacaoService - Transacao atualizada com sucesso: id=2
+2026-10-28 01:19:20.695 [INFO] [main] TransacaoController - PUT /transacoes/2 -> 200 OK
+2026-10-28 01:19:20.695 [DEBUG] [main] TransacaoController - PUT /transacoes/999 recebido
+2026-10-28 01:19:20.695 [DEBUG] [main] TransacaoService - Atualizando transacao id=999 com tipo=DESPESA, valor=10.00
+2026-10-28 01:19:20.695 [ERRO] [main] TransacaoService - Nao foi possivel atualizar, transacao nao encontrada: id=999
+2026-10-28 01:19:20.696 [ERRO] [main] TransacaoController - PUT /transacoes/999 -> 404 Not Found
+2026-10-28 01:19:20.696 [DEBUG] [main] TransacaoController - DELETE /transacoes/2 recebido
+2026-10-28 01:19:20.696 [DEBUG] [main] TransacaoService - Excluindo transacao id=2
+2026-10-28 01:19:20.696 [INFO] [main] TransacaoService - Transacao excluida com sucesso: id=2
+2026-10-28 01:19:20.697 [INFO] [main] TransacaoController - DELETE /transacoes/2 -> 204 No Content
+2026-10-28 01:19:20.697 [DEBUG] [main] TransacaoController - DELETE /transacoes/999 recebido
+2026-10-28 01:19:20.697 [DEBUG] [main] TransacaoService - Excluindo transacao id=999
+2026-10-28 01:19:20.697 [ERRO] [main] TransacaoService - Nao foi possivel excluir, transacao nao encontrada: id=999
+2026-10-28 01:19:20.698 [ERRO] [main] TransacaoController - DELETE /transacoes/999 -> 404 Not Found
+2026-10-28 01:19:20.698 [DEBUG] [main] TransacaoController - GET /transacoes/resumo recebido
+2026-10-28 01:19:20.698 [DEBUG] [main] TransacaoService - Calculando resumo financeiro
+2026-10-28 01:19:20.698 [INFO] [main] TransacaoService - Resumo financeiro calculado: saldo=3500.00
+2026-10-28 01:19:20.698 [INFO] [main] TransacaoController - GET /transacoes/resumo -> 200 OK
+2026-10-28 01:19:20.699 [ERRO] [main] GlobalExceptionHandler - Requisicao invalida (400). Campos com erro: [descricao, valor]
